@@ -2,9 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Book Store</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<header class="header">
+    <h1>Online Book Store</h1>
+    <p>Here you can seek book, customer and order information</p>
+</header>
 
+<main>
+    <!-- Buttons to select service -->
+    <section class="buttons-section">
+        <button id="orderBtn" onclick="fetchData('orders')" class="service-btn">Orders</button>
+        <button id="customerBtn" onclick="fetchData('customers')" class="service-btn">Customers</button>
+        <button id="bookBtn" onclick="fetchData('books')" class="service-btn">Books</button>
+    </section>
+
+    <!-- Displaying  buttons -->
+    <section id="service-info" class="info-section">
+        <h2 id="selectedService">Select a service to view</h2>
+    </section>
+
+    <!-- CRUD operations  -->
+    <section id="crud-operations" class="crud-section" style="display:none;">
+
+        <button onclick="showCreateForm()" class="crud-btn">Create Data</button>
+    </section>
+
+    <!-- Data display -->
+    <section id="data-display">
+        <h3>Data from the selected service:</h3>
+        <table id="data-table" class="data-table">
+            <thead></thead>
+            <tbody id="data-body"></tbody>
+        </table>
+    </section>
+
+
+    <section id="create-form-section" class="form-section" style="display:none;">
+        <h3 id="form-title">Create New Data</h3>
+        <form id="createForm"></form>
+        <button onclick="submitData(event)" class="crud-btn">Submit</button>
+    </section>
+</main>
+
+<script src="BookScripts.js"></script>
 </body>
 </html>
